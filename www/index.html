@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+        <title>Camivi Chat</title>
+    </head>
+    <body>
+        <div id="pagina-login" class="blue-grey lighten-5" class="hide">
+            <nav class="nav-wrapper teal lighten-2" id="style">   
+                <a class="brand-logo center" id="insc">Inscrever-se</a>
+            </nav>      
+            <div class="row s12" id="styM">
+                <div class="container col l4 s12 offset-l4" >
+                    <div class="card white  black-text z-depth-5" >
+                        <div class="card-content center">
+                            <img src="img/logot2.png" class="card-image">
+                            <span id="text1" class="card-title">Entre Em Sua Conta</span>
+                            <form method="POST" id="form-usuario">
+                                <div class="input-field">
+                                    <input id="nome" name="nome"  placeholder=" Digite seu email " >
+                                    <label for="nome"></label>
+                                </div>
+                                <div class="input-field">
+                                    
+                                    <input  id="senha" type="password" name="senha" placeholder="Digite sua senha" />
+                                    <img src="img/olho.png" id="mostrasenha">
+                                </div>
+                                <div class="card-action">
+                                    <a  id="btentrar" class="btn waves-effect waves-light teal lighten-2">Entrar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pagina-load" class="hide">
+     
+            <div class="container col l4 s12 offset-l4">
+                <div class="card white  black-text z-depth-5" >
+                    <div class="card-content center">
+                        <form>                      
+                        <img src="img/logot2.png" class="card-image">
+                        <div >
+                            <span id="bemvindo" >Seja Bem Vindo </span>
+                        </div>
+                        <div class="brand-logo center">
+                    <img src="img/load.gif" class="responsive-image" >
+                </div>              
+            </div>
+            </form>
+           </div>
+       </div>
+</div>
+
+       
+
+
+
+
+        <div id="registrar" class="hide">
+            <nav class="nav-wrapper teal lighten-2" >
+                <a href="#!" class="brand-logo center" id="regis" >Registrar-se</a>
+            </nav>
+            <div class="row s12" >
+                <div class="container col l4 s12 offset-l4" >
+                    <div class="card white  black-text z-depth-5" >
+                        <div class="card-content center">
+                            <img src="img/logot.png" class="card-image">
+                            <form method="POST" id="form-usuario">
+                                <div class="input-field">
+                                    <input id="nome" name="nome"  placeholder=" Digite seu nome " data-length="120">
+                                    <label for="nome"></label>
+                                </div>
+                                <div class="input-field">
+                                    <input  id="Data" type="date" name="data" class="validate" >
+                                    <label for="data"></label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="email" name="email" type="email" class="validate" placeholder=" Digite seu email " data-length="80">
+                                    <label for="email"></label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="senha" name="senha" type="password"  placeholder=" Digite uma senha " data-length="50">
+                                    <label for="senha"></label>
+                                </div>
+                                <div class="card-action">
+                                    <a class="btn waves-effect waves-light teal lighten-2" type="submit" name="action">Registrar-Se</a>
+                                    <h3 id="possuiconta"> Você Ja Possui Uma Conta ?<a href="#!" id="entreaqui">Entre Aqui</a></h3>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pagina-postagem" class="hide">
+            <nav >
+                <div  class="nav-wrapper white" id="w" >
+                    <a href="#" class="brand-logo  "><img src="img/logot2.png"  id="logotg"></a>
+                    <a href="#"class="sidenav-trigger" data-target="mobile-links" ><i class="material-icons" id="icM" >menu</i></a>
+                    <a href="#"class="sidenav-trigger right" data-target="mobile-demo" ><i class="material-icons " id="chaticon" >chat</i></a>
+
+                    <ul id="nav-mobile" class="right hide-on-med-and-down" id="ul">
+                        <li><a href="sass.html"><i class="material-icons  ">account_circle</i></a></li>
+                        <li><a href="badges.html"><i class="material-icons"  >chat</i></a></li>
+                        <li><a href="collapsible.html"><i class="material-icons " >power_settings_new</i></a></li>
+                    </ul>
+                </div> 
+            </nav>
+
+            <ul class="sidenav" id="mobile-links">
+                <div class="user-view">
+
+                    <a href="#user"><img class="circle" src="img/homer.jpg" id="imgp"></a>
+                    <a href="#name"><span class="black-text name">Homer Simpson</span></a>
+                    <a href="#email"><span class="black-text email">homerSimp@gmail.com</span></a>
+                </div>
+                <li><a href="sass.html">Perfil
+                        <i class="material-icons prefix " id="cc" >account_circle</i></a>
+                </li>
+                <li>
+                    <a href="badges.html">Bate papo<i class="material-icons prefix"   id="ct"  >chat</i></a>
+                </li>
+                <li>
+                    <a href="collapsible.html">Sair<i class="material-icons prefix"   id="ps" >power_settings_new</i></a>
+                </li>
+            </ul>      
+            <div class="row s10" id="rw10">
+                <div class="container col l4 s12 offset-l4" >
+                    <div class="card-panel  white  black-text z-depth-5" >
+                        <div class="row ">
+                            <form method="POST" >
+                                <div>
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Ocultar Perfil</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="input-field">
+                                    <textarea id="textarea2" class="materialize-textarea" data-length="800"></textarea>
+                                    <label for="textarea2"></label>
+                                </div>
+                                <div class="input-fiel">
+                                      <button class="btn waves-effect waves-light right ">Publicar<i class="material-icons right" >send</i></button>
+                                </div>
+                                <div class="input-field">
+                                    <a  class="left" name="foto" id="btfoto"><i class="material-icons" id="add_a_photo" >add_a_photo</i>
+                                    <ul class="hide" id="iconMidia">
+                                        <li><a class="btn-floating red" ><i class="material-icons" id="tirarFoto">camera_alt</i></a></li>
+                                        <li><a class="btn-floating blue" ><i class="material-icons" id="inserirImagem">attach_file</i></a></li>
+                                      </ul></a>
+                                </div>
+                                </div>
+                                <div class="card-action">
+                                <img id="viewimagem"  class="hide">
+                                </div>
+                                </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div id="Perfil" class="hide">
+
+</div>
+
+<div id="chat" class="hide">
+
+</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
